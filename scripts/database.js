@@ -44,3 +44,7 @@ export const getSizes = () => {
     return [...database.sizes]
 }
 
+export const getStyles = () => {
+    return [...database.styles]
+}
+
