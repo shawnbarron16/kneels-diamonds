@@ -5,6 +5,9 @@ const metals = getMetals()
 document.addEventListener(
     "change",
     (event) => {
+        if (event.target.name === "metalj") {
+            window.alert(`Use chose metal ${event.target.value}`)
+        }
     }
 )
 
