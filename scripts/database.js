@@ -49,6 +49,10 @@ export const getStyles = () => {
     return [...database.styles]
 }
 
+export const getOrders = () => {
+    return [...database.customOrders]
+}
+
 export const setMetal = (id) => {
     database.orderBuilder.metalId = id 
 }
@@ -59,4 +63,28 @@ export const setSize = (id) => {
 
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
+}
+
+export const addCustomOrder = () =>  {
+    const newOrder = {...database.newOrder}
+
+    newOrder.id = [...database.customOrders].pop().id + 1
+
+    const today = new Date();
+
+    const month = today.getMonth() + 1;
+
+    const day = today.getDate();
+
+    const time = today.getHours() + ":" + today.getMinutes();
+
+    const currentDate = `${month}/${day}  ${time}`;
+
+    newOrder.timestamp = currentDate
+    
+    database.customOrders.push(newOrder)
+
+    database.orderBuilder = {}
+
+    document.dispatchEvent(new CustomEvent("stateChanged"))
 }
