@@ -1,4 +1,6 @@
 import { KneelDiamonds } from "./KneelDiamonds.js"
+import { addCustomOrder } from "./database.js"
+
 
 const mainContainer = document.querySelector("#container")
 
@@ -8,3 +10,13 @@ const renderAllHTML = () => {
 
 renderAllHTML()
 
+
+document.addEventListener(
+    "click",
+    (clivkEvent) => {
+        if (clivkEvent.target.id === "orderButton") {
+            addCustomOrder()
+            renderAllHTML()
+        }
+    }
+)
