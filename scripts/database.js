@@ -66,7 +66,7 @@ export const setStyle = (id) => {
 }
 
 export const addCustomOrder = () =>  {
-    const newOrder = {...database.newOrder}
+    const newOrder = {...database.orderBuilder}
 
     newOrder.id = [...database.customOrders].pop().id + 1
 

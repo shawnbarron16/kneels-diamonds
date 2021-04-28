@@ -16,7 +16,13 @@ document.addEventListener(
     (clivkEvent) => {
         if (clivkEvent.target.id === "orderButton") {
             addCustomOrder()
-            renderAllHTML()
         }
+    }
+)
+
+document.addEventListener(
+    "stateChanged",
+    (event) => {
+        renderAllHTML()
     }
 )
