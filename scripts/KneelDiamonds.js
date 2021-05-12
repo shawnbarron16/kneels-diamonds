@@ -5,7 +5,7 @@ import { Orders } from "./Orders.js"
 
 
 export const KneelDiamonds = () => {
-    return `
+    return /*html*/`
         <h1>Kneel Diamonds</h1>
 
         <article class="choices">
